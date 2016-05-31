@@ -1,6 +1,4 @@
-[![GitHub issues](https://img.shields.io/github/issues/stoe/atom-linkwrap.svg?style=flat-square)](https://github.com/stoe/atom-linkwrap/issues)
-[![GitHub stars](https://img.shields.io/github/stars/stoe/atom-linkwrap.svg?style=flat-square)](https://github.com/stoe/atom-linkwrap/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/stoe/atom-linkwrap/master/LICENSE)
+[![Build Status](https://travis-ci.org/stoe/atom-linkwrap.svg?branch=master)](https://travis-ci.org/stoe/atom-linkwrap)
 
 # Atmo.io Markdown Link Wrap package
 
@@ -14,6 +12,18 @@ apm install atom-linkwrap
 ```
 
 
+### Usage
+
+1. Copy the link
+2. Select the text
+3. Click `ctrl+shift+v` (`cmd+shift+v` on Macs) and the markdown link will be created in place.
+
+
 ### License
 
 [MIT](./LICENSE)
+
+
+### Thanks
+
+@bitoiu for [markwrap](https://github.com/bitoiu/markwrap)
