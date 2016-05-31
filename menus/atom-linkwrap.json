@@ -1,12 +1,4 @@
 {
-    "context-menu": {
-        "atom-text-editor": [
-            {
-                "label"  : "Toggle atom-linkwrap",
-                "command": "atom-linkwrap:paste"
-            }
-        ]
-    },
     "menu"        : [
         {
             "label"  : "Packages",

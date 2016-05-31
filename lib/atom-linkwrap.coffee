@@ -1,24 +1,19 @@
-{ CompositeDisposable } = require 'atom'
+LinkWrap = require './linkwrap.coffee'
 
 module.exports =
-  subscriptions: null
+  config: {}
 
   activate: ->
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace',
-      'atom-linkwrap:paste': => @paste()
+    @linkWrap = new LinkWrap()
+
+    @command = atom.commands.add "atom-text-editor",
+        "atom-linkwrap:paste", (event) =>
+            editor = atom.workspace.getActiveTextEditor()
+            selection = editor.getSelectedText()
+            clipboard = atom.clipboard.read()
+
+            @linkWrap.paste(editor, selection, clipboard)
 
   deactivate: ->
-    @subscriptions.dispose()
-
-  paste: ->
-    if editor = atom.workspace.getActiveTextEditor()
-      selection = editor.getSelectedText()
-      clipboard = atom.clipboard.read()
-
-      if selection
-        insert = '[$name]($href)'
-        .replace('$name', selection)
-        .replace('$href', clipboard)
-
-        editor.insertText(insert)
+    @command.dispose()
+    @linkWrap.destroy()
