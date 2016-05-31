@@ -1,0 +1,4 @@
+'.platform-darwin atom-text-editor.is-focused[data-grammar="source gfm"]':
+  'cmd-shift-v': 'atom-linkwrap:paste'
+'.platform-win32 atom-text-editor.is-focused[data-grammar="source gfm"], .platform-linux atom-text-editor.is-focused[data-grammar="source gfm"]':
+  'ctrl-shift-v': 'atom-linkwrap:paste'
