@@ -26,4 +26,4 @@ apm install atom-linkwrap
 
 ### Thanks
 
-@bitoiu for [markwrap](https://github.com/bitoiu/markwrap)
+[@bitoiu](https://github.com/bitoiu) for [markwrap](https://github.com/bitoiu/markwrap)
