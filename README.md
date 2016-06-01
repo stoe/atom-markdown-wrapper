@@ -14,9 +14,18 @@ apm install atom-linkwrap
 
 ### Usage
 
+#### Links
+
 1. Copy the link
 2. Select the text
 3. Click `ctrl+shift+v` (`cmd+shift+v` on Macs) and the markdown link will be created in place.
+
+
+#### Images
+
+1. Copy the image link
+2. Select the text (optional)
+3. Click `ctrl+shift+i` (`cmd+shift+i` on Macs) and the markdown image will be created in place.
 
 
 ### License
