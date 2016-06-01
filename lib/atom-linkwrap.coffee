@@ -1,4 +1,5 @@
 LinkWrap = require './linkwrap.coffee'
+{Notification} = require 'atom'
 
 module.exports =
   config: {}
@@ -12,7 +13,14 @@ module.exports =
             selection = editor.getSelectedText()
             clipboard = atom.clipboard.read()
 
-            @linkWrap.paste(editor, selection, clipboard)
+            try
+              @linkWrap.paste(editor, selection, clipboard)
+            catch
+              atom.notifications.addError('Not a valid URL', {
+                dismissable: true,
+                detail: clipboard,
+                icon: 'zap'
+              })
 
     @command = atom.commands.add 'atom-text-editor',
         'atom-linkwrap:image', (event) =>
@@ -20,7 +28,14 @@ module.exports =
             clipboard = atom.clipboard.read()
             selection = editor.getSelectedText()
 
-            @linkWrap.image(editor, clipboard, selection)
+            try
+              @linkWrap.image(editor, clipboard, selection)
+            catch
+              atom.notifications.addError('Not a valid image URL', {
+                dismissable: true,
+                detail: clipboard,
+                icon: 'zap'
+              })
 
   deactivate: ->
     @command.dispose()
