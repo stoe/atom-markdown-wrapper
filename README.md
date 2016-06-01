@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/stoe/atom-linkwrap.svg?branch=master)](https://travis-ci.org/stoe/atom-linkwrap)
 
-# Atmo.io Markdown Link Wrap package
+# Atom.io Markdown Link Wrap package
 
 Wraps the selected text in a markdown link with clipboard contents.
 
