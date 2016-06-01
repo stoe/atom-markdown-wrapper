@@ -1,4 +1,5 @@
 { CompositeDisposable } = require 'atom'
+validUrl = require 'valid-url'
 
 module.exports =
   class LinkWrap
@@ -20,6 +21,9 @@ module.exports =
           .replace('$selection', selection)
           .replace('$href', clipboard)
 
+        if !validUrl.isUri(clipboard)
+          throw new Error('Not a valid URL')
+
         editor.insertText(insert)
 
         return insert
@@ -29,6 +33,9 @@ module.exports =
         insert = '![$selection]($img)'
           .replace('$selection', selection || '')
           .replace('$img', clipboard)
+
+        if !validUrl.isUri(clipboard)
+          throw new Error('Not a valid image URL')
 
         editor.insertText(insert)
 

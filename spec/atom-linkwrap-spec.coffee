@@ -48,6 +48,9 @@ describe 'AtomLinkwrap', ->
         @linkwrap.paste(1, 2, 3)
         expect(@linkwrap.paste).toHaveBeenCalledWith(1, 2, 3)
 
+      it 'should only paste valid URLs', ->
+        expect(-> new Linkwrap().paste(editor, sel, 'foobar')).toThrow('Not a valid URL')
+
       it 'should replace `selection` with [selection](https://example.com)', ->
         spyOn(@linkwrap, 'paste').andCallThrough()
 
@@ -71,6 +74,9 @@ describe 'AtomLinkwrap', ->
 
         @linkwrap.image(1, 2, 3)
         expect(@linkwrap.image).toHaveBeenCalledWith(1, 2, 3)
+
+      it 'should only paste valid URLs', ->
+        expect(-> new Linkwrap().image(editor, 'image')).toThrow('Not a valid image URL')
 
       it 'should insert ![](https://example.com/image.png)', ->
         spyOn(@linkwrap, 'image').andCallThrough()
