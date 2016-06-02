@@ -1,18 +1,18 @@
 {
-    "menu"        : [
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
         {
-            "label"  : "Packages",
-            "submenu": [
-                {
-                    "label"  : "atom-linkwrap",
-                    "submenu": [
-                        {
-                            "label"  : "Toggle",
-                            "command": "atom-linkwrap:paste"
-                        }
-                    ]
-                }
-            ]
+          "label": "atom-linkwrap",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "atom-linkwrap:paste"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
