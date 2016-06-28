@@ -1,6 +1,6 @@
 {
   "name": "atom-linkwrap",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Wraps the selected text in a markdown link with clipboard contents.",
   "keywords": [
     "markdown",
