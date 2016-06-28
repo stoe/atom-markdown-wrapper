@@ -4,5 +4,4 @@ notifications:
     on_failure: change
 
 script:
-  - snyk test
   - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
