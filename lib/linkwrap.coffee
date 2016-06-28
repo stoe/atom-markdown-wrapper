@@ -21,7 +21,7 @@ module.exports =
           .replace('$selection', selection)
           .replace('$href', clipboard)
 
-        if !validUrl.isUri(clipboard)
+        if !validUrl.isWebUri(clipboard)
           throw new Error('Not a valid URL')
 
         editor.insertText(insert)
@@ -34,7 +34,7 @@ module.exports =
           .replace('$selection', selection || '')
           .replace('$img', clipboard)
 
-        if !validUrl.isUri(clipboard)
+        if !validUrl.isWebUri(clipboard)
           throw new Error('Not a valid image URL')
 
         editor.insertText(insert)

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/stoe/atom-linkwrap.svg?branch=master)](https://travis-ci.org/stoe/atom-linkwrap)
+[![Build Status](https://travis-ci.org/stoe/atom-linkwrap.svg?branch=master)](https://travis-ci.org/stoe/atom-linkwrap) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-linkwrap/badge.svg)](https://snyk.io/test/github/stoe/atom-linkwrap)
 
 # Atom.io Markdown Link Wrap package
 

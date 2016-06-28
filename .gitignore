@@ -1,3 +1,8 @@
-.DS_Store
-npm-debug.log
+## folders
 node_modules
+
+## files
+.DS_Store
+.snyk
+npm-debug.log
+*.js*

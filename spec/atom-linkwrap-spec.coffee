@@ -38,7 +38,6 @@ describe 'AtomLinkwrap', ->
       expect(@linkwrap).toBeDefined()
 
     describe '.paste()', ->
-
       it 'should be defined', ->
         expect(@linkwrap.paste).toBeDefined()
 
@@ -59,7 +58,6 @@ describe 'AtomLinkwrap', ->
         expect(res).toBe '[selection](https://example.com)'
 
     describe '.image()', ->
-
       it 'should be defined', ->
         expect(@linkwrap.image).toBeDefined()
 
