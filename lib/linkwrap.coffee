@@ -11,6 +11,10 @@ module.exports =
         'atom-linkwrap:paste': => @paste()
       @subscriptions.add atom.commands.add 'atom-workspace',
         'atom-linkwrap:image': => @image()
+      @subscriptions.add atom.commands.add 'atom-workspace',
+        'atom-linkwrap:bold': => @bold()
+      @subscriptions.add atom.commands.add 'atom-workspace',
+        'atom-linkwrap:italic': => @italic()
 
     destroy: ->
       @subscriptions.dispose()
@@ -36,6 +40,24 @@ module.exports =
 
         if !validUrl.isWebUri(clipboard)
           throw new Error('Not a valid image URL')
+
+        editor.insertText(insert)
+
+        return insert
+
+    bold: (editor, selection) ->
+      if editor && selection
+        insert = '**$selection**'
+          .replace('$selection', selection)
+
+        editor.insertText(insert)
+
+        return insert
+
+    italic: (editor, selection) ->
+      if editor && selection
+        insert = '_$selection_'
+          .replace('$selection', selection)
 
         editor.insertText(insert)
 

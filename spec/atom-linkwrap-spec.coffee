@@ -89,3 +89,37 @@ describe 'AtomLinkwrap', ->
         res = @linkwrap.image(editor, img, sel)
         expect(@linkwrap.image).toHaveBeenCalledWith(editor, img, sel)
         expect(res).toBe '![selection](https://example.com/image.png)'
+
+    describe '.bold()', ->
+      it 'should be defined', ->
+        expect(@linkwrap.bold).toBeDefined()
+
+      it 'should require 2 parameters', ->
+        spyOn(@linkwrap, 'bold')
+
+        @linkwrap.bold(1, 2)
+        expect(@linkwrap.bold).toHaveBeenCalledWith(1, 2)
+
+      it 'should insert **selection**', ->
+        spyOn(@linkwrap, 'bold').andCallThrough()
+
+        res = @linkwrap.bold(editor, sel)
+        expect(@linkwrap.bold).toHaveBeenCalledWith(editor, sel)
+        expect(res).toBe '**selection**'
+
+    describe '.italic()', ->
+      it 'should be defined', ->
+        expect(@linkwrap.italic).toBeDefined()
+
+      it 'should require 2 parameters', ->
+        spyOn(@linkwrap, 'italic')
+
+        @linkwrap.italic(1, 2)
+        expect(@linkwrap.italic).toHaveBeenCalledWith(1, 2)
+
+      it 'should insert _selection_', ->
+        spyOn(@linkwrap, 'italic').andCallThrough()
+
+        res = @linkwrap.italic(editor, sel)
+        expect(@linkwrap.italic).toHaveBeenCalledWith(editor, sel)
+        expect(res).toBe '_selection_'

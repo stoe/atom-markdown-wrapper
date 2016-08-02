@@ -37,6 +37,20 @@ module.exports =
                 icon: 'zap'
               })
 
+    @command = atom.commands.add 'atom-text-editor',
+        'atom-linkwrap:bold', (event) =>
+            editor = atom.workspace.getActiveTextEditor()
+            selection = editor.getSelectedText()
+
+            @linkWrap.bold(editor, selection)
+
+    @command = atom.commands.add 'atom-text-editor',
+        'atom-linkwrap:italic', (event) =>
+            editor = atom.workspace.getActiveTextEditor()
+            selection = editor.getSelectedText()
+
+            @linkWrap.italic(editor, selection)
+
   deactivate: ->
     @command.dispose()
     @linkWrap.destroy()
