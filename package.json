@@ -1,6 +1,6 @@
 {
   "name": "atom-markdown-wrapper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Wraps the selected text in a markdown link with clipboard contents.",
   "keywords": [
     "markdown",
