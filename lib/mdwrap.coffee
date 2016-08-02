@@ -2,19 +2,19 @@
 validUrl = require 'valid-url'
 
 module.exports =
-  class LinkWrap
+  class mdwrap
     subscriptions: []
 
     constructor: ->
       @subscriptions = new CompositeDisposable
       @subscriptions.add atom.commands.add 'atom-workspace',
-        'atom-linkwrap:paste': => @paste()
+        'atom-markdown-wrapper:paste': => @paste()
       @subscriptions.add atom.commands.add 'atom-workspace',
-        'atom-linkwrap:image': => @image()
+        'atom-markdown-wrapper:image': => @image()
       @subscriptions.add atom.commands.add 'atom-workspace',
-        'atom-linkwrap:bold': => @bold()
+        'atom-markdown-wrapper:bold': => @bold()
       @subscriptions.add atom.commands.add 'atom-workspace',
-        'atom-linkwrap:italic': => @italic()
+        'atom-markdown-wrapper:italic': => @italic()
 
     destroy: ->
       @subscriptions.dispose()

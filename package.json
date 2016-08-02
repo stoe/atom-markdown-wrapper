@@ -1,13 +1,15 @@
 {
   "name": "atom-markdown-wrapper",
   "version": "2.0.1",
-  "description": "Wraps the selected text in a markdown link with clipboard contents.",
+  "description": "Wraps markdown links, images, bold and italic text.",
   "keywords": [
     "markdown",
+    "paste",
     "link",
     "image",
+    "bold",
+    "italic",
     "wrap",
-    "paste",
     "clipboard"
   ],
   "author": {
@@ -17,17 +19,20 @@
   },
   "contributors": [],
   "license": "MIT",
-  "main": "./lib/atom-linkwrap",
+  "main": "./lib/atom-markdown-wrapper",
   "activationCommands": {
-    "atom-workspace": "atom-linkwrap:paste"
+    "atom-workspace": "atom-markdown-wrapper:paste",
+    "atom-workspace": "atom-markdown-wrapper:image",
+    "atom-workspace": "atom-markdown-wrapper:bold",
+    "atom-workspace": "atom-markdown-wrapper:italic"
   },
   "homepage": "http://stefan.stoelzle.me",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stoe/atom-linkwrap.git"
+    "url": "https://github.com/stoe/atom-markdown-wrapper.git"
   },
   "bugs": {
-    "url": "https://github.com/stoe/atom-linkwrap/issues"
+    "url": "https://github.com/stoe/atom-markdown-wrapper/issues"
   },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
