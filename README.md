@@ -28,6 +28,18 @@ apm install atom-linkwrap
 3. Click `ctrl+shift+i` (`cmd+shift+i` on Macs) and the markdown image will be created in place.
 
 
+#### Bold
+
+1. Select the text
+2. Click `ctrl+shift+b` (`cmd+shift+b` on Macs) and the selected text will be marked **bold** (`**bold**`).
+
+
+#### Italic
+
+1. Select the text
+2. Click `ctrl+i` (`cmd+i` on Macs) and the selected text will be marked _italic_ (`_italic_`).
+
+
 ### License
 
 [MIT](./LICENSE)
