@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/stoe/atom-linkwrap.svg?branch=master)](https://travis-ci.org/stoe/atom-linkwrap) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-linkwrap/badge.svg)](https://snyk.io/test/github/stoe/atom-linkwrap)
+[![Build Status](https://travis-ci.org/stoe/atom-markdown-wrapper.svg?branch=master)](https://travis-ci.org/stoe/atom-markdown-wrapper) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c/badge.svg)](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c)
 
-# Atom.io Markdown Link Wrap package
+# Atom.io Markdown Wrapper package
 
-Wraps the selected text in a markdown link with clipboard contents.
+Wraps markdown links, images, bold and italic text.
 
 
 ### Installation
 
 ```
-apm install atom-linkwrap
+apm install atom-markdown-wrapper
 ```
 
 

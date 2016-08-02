@@ -1,0 +1,10 @@
+'.platform-darwin atom-text-editor.is-focused[data-grammar="source gfm"]':
+  'cmd-shift-v': 'atom-markdown-wrapper:paste'
+  'cmd-shift-i': 'atom-markdown-wrapper:image'
+  'cmd-shift-b': 'atom-markdown-wrapper:bold'
+  'cmd-i': 'atom-markdown-wrapper:italic'
+'.platform-win32 atom-text-editor.is-focused[data-grammar="source gfm"], .platform-linux atom-text-editor.is-focused[data-grammar="source gfm"]':
+  'ctrl-shift-v': 'atom-markdown-wrapper:paste'
+  'ctrl-shift-i': 'atom-markdown-wrapper:image'
+  'ctrl-shift-b': 'atom-markdown-wrapper:bold'
+  'ctrl-i': 'atom-markdown-wrapper:italic'

@@ -1,20 +1,20 @@
-LinkWrap = require './linkwrap.coffee'
+mdwrap = require './mdwrap.coffee'
 {Notification} = require 'atom'
 
 module.exports =
   config: {}
 
   activate: ->
-    @linkWrap = new LinkWrap()
+    @mdwrap = new mdwrap()
 
     @command = atom.commands.add 'atom-text-editor',
-        'atom-linkwrap:paste', (event) =>
+        'atom-markdown-wrapper:paste', (event) =>
             editor = atom.workspace.getActiveTextEditor()
             selection = editor.getSelectedText()
             clipboard = atom.clipboard.read()
 
             try
-              @linkWrap.paste(editor, selection, clipboard)
+              @mdwrap.paste(editor, selection, clipboard)
             catch
               atom.notifications.addError('Not a valid URL', {
                 dismissable: true,
@@ -23,13 +23,13 @@ module.exports =
               })
 
     @command = atom.commands.add 'atom-text-editor',
-        'atom-linkwrap:image', (event) =>
+        'atom-markdown-wrapper:image', (event) =>
             editor = atom.workspace.getActiveTextEditor()
             clipboard = atom.clipboard.read()
             selection = editor.getSelectedText()
 
             try
-              @linkWrap.image(editor, clipboard, selection)
+              @mdwrap.image(editor, clipboard, selection)
             catch
               atom.notifications.addError('Not a valid image URL', {
                 dismissable: true,
@@ -38,19 +38,19 @@ module.exports =
               })
 
     @command = atom.commands.add 'atom-text-editor',
-        'atom-linkwrap:bold', (event) =>
+        'atom-markdown-wrapper:bold', (event) =>
             editor = atom.workspace.getActiveTextEditor()
             selection = editor.getSelectedText()
 
-            @linkWrap.bold(editor, selection)
+            @mdwrap.bold(editor, selection)
 
     @command = atom.commands.add 'atom-text-editor',
-        'atom-linkwrap:italic', (event) =>
+        'atom-markdown-wrapper:italic', (event) =>
             editor = atom.workspace.getActiveTextEditor()
             selection = editor.getSelectedText()
 
-            @linkWrap.italic(editor, selection)
+            @mdwrap.italic(editor, selection)
 
   deactivate: ->
     @command.dispose()
-    @linkWrap.destroy()
+    @mdwrap.destroy()
