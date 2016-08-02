@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/stoe/atom-markdown-wrapper.svg?branch=master)](https://travis-ci.org/stoe/atom-markdown-wrapper) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-markdown-wrapper/badge.svg)](https://snyk.io/test/github/stoe/atom-markdown-wrapper)
+[![Build Status](https://travis-ci.org/stoe/atom-markdown-wrapper.svg?branch=master)](https://travis-ci.org/stoe/atom-markdown-wrapper) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c/badge.svg)](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c)
 
 # Atom.io Markdown Wrapper package
 
