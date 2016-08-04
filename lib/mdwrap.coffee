@@ -25,8 +25,8 @@ module.exports =
           .replace('$selection', selection)
           .replace('$href', clipboard)
 
-        if !validUrl.isWebUri(clipboard)
-          throw new Error('Not a valid URL')
+        if !(validUrl.isWebUri(clipboard) || clipboard.match(/^\#/))
+          throw new Error('Not a valid URL or #anchor')
 
         editor.insertText(insert)
 
