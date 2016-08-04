@@ -2,7 +2,7 @@ Atommdwrap = require '../lib/atom-markdown-wrapper'
 mdwrap = require '../lib/mdwrap'
 
 describe 'Atom Markdown Wrapper', ->
-  [editor, sel, txt, img] = []
+  [editor, sel, txt, anchor, img] = []
 
   beforeEach ->
     waitsForPromise ->
@@ -26,12 +26,14 @@ describe 'Atom Markdown Wrapper', ->
       editor = atom.workspace.getActiveTextEditor()
       sel = 'selection'
       txt = 'https://example.com'
+      anchor = '#example'
       img = 'https://example.com/image.png'
 
     afterEach ->
       editor = null
       sel = null
       txt = null
+      anchor = null
       img = null
 
     it 'should be defined', ->
@@ -47,15 +49,22 @@ describe 'Atom Markdown Wrapper', ->
         @mdwrap.paste(1, 2, 3)
         expect(@mdwrap.paste).toHaveBeenCalledWith(1, 2, 3)
 
-      it 'should only paste valid URLs', ->
-        expect(-> new mdwrap().paste(editor, sel, 'foobar')).toThrow('Not a valid URL')
+      it 'should only paste valid links', ->
+        expect(-> new mdwrap().paste(editor, sel, 'foobar')).toThrow('Not a valid URL or #anchor')
 
-      it 'should replace `selection` with [selection](https://example.com)', ->
+      it 'should replace `selection` with [selection](https://example.com) for web links', ->
         spyOn(@mdwrap, 'paste').andCallThrough()
 
         res = @mdwrap.paste(editor, sel, txt)
         expect(@mdwrap.paste).toHaveBeenCalledWith(editor, sel, txt)
         expect(res).toBe '[selection](https://example.com)'
+
+      it 'should replace `selection` with [selection](#example) for anchor links', ->
+        spyOn(@mdwrap, 'paste').andCallThrough()
+
+        res = @mdwrap.paste(editor, sel, anchor)
+        expect(@mdwrap.paste).toHaveBeenCalledWith(editor, sel, anchor)
+        expect(res).toBe '[selection](#example)'
 
     describe '.image()', ->
       it 'should be defined', ->
