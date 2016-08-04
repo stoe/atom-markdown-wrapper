@@ -49,7 +49,7 @@ describe 'Atom Markdown Wrapper', ->
         @mdwrap.paste(1, 2, 3)
         expect(@mdwrap.paste).toHaveBeenCalledWith(1, 2, 3)
 
-      it 'should only paste valid URLs', ->
+      it 'should only paste valid links', ->
         expect(-> new mdwrap().paste(editor, sel, 'foobar')).toThrow('Not a valid URL or #anchor')
 
       it 'should replace `selection` with [selection](https://example.com) for web links', ->
