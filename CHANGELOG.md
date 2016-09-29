@@ -2,6 +2,11 @@
 
 ## atom-markdown-wrapper
 
+### 4.2.0
+- Change **bold** shortcut to `cmd-b` (`ctrl-b`)
+
+## atom-markdown-wrapper
+
 ### 4.1.1
 - Add changelog
 

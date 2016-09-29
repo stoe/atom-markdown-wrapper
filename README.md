@@ -31,7 +31,7 @@ apm install atom-markdown-wrapper
 #### Bold
 
 1. Select the text
-2. Click `ctrl+shift+b` (`cmd+shift+b` on Macs) and the selected text will be marked **bold** (`**bold**`).
+2. Click `ctrl+b` (`cmd+b` on Macs) and the selected text will be marked **bold** (`**bold**`).
 
 
 #### Italic
