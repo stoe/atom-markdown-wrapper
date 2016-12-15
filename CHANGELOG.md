@@ -2,6 +2,9 @@
 
 ## atom-markdown-wrapper
 
+### 5.0.0.
+- Switch to `use babel` and ECMAScript 6
+
 ### 4.2.0
 - Change **bold** shortcut to `cmd-b` (`ctrl-b`)
 
