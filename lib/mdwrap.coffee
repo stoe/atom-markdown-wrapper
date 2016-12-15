@@ -32,11 +32,13 @@ module.exports =
 
         return insert
 
-    image: (editor, clipboard, selection) ->
+    image: (editor, selection, clipboard) ->
       if editor && clipboard
         insert = '![$selection]($img)'
           .replace('$selection', selection || '')
           .replace('$img', clipboard)
+
+        debugger
 
         if !validUrl.isWebUri(clipboard)
           throw new Error('Not a valid image URL')

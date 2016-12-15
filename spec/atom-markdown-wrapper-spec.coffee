@@ -83,20 +83,20 @@ describe 'Atom Markdown Wrapper', ->
         expect(@mdwrap.image).toHaveBeenCalledWith(1, 2, 3)
 
       it 'should only paste valid URLs', ->
-        expect(-> new mdwrap().image(editor, 'image')).toThrow('Not a valid image URL')
+        expect(-> new mdwrap().image(editor, sel, 'image')).toThrow('Not a valid image URL')
 
       it 'should insert ![](https://example.com/image.png)', ->
         spyOn(@mdwrap, 'image').andCallThrough()
 
-        res = @mdwrap.image(editor, img)
-        expect(@mdwrap.image).toHaveBeenCalledWith(editor, img)
+        res = @mdwrap.image(editor, undefined, img)
+        expect(@mdwrap.image).toHaveBeenCalledWith(editor, undefined, img)
         expect(res).toBe '![](https://example.com/image.png)'
 
       it 'should replace `selection` with ![selection](https://example.com/image.png)', ->
         spyOn(@mdwrap, 'image').andCallThrough()
 
-        res = @mdwrap.image(editor, img, sel)
-        expect(@mdwrap.image).toHaveBeenCalledWith(editor, img, sel)
+        res = @mdwrap.image(editor, sel, img)
+        expect(@mdwrap.image).toHaveBeenCalledWith(editor, sel, img)
         expect(res).toBe '![selection](https://example.com/image.png)'
 
     describe '.bold()', ->
