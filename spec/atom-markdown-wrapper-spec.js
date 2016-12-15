@@ -4,15 +4,15 @@ const Atommdwrap = require('../lib/atom-markdown-wrapper');
 const mdwrap = require('../lib/mdwrap');
 
 describe('Atom Markdown Wrapper', () => {
-  [editor, sel, txt, anchor, img] = [];
+  let [editor, sel, txt, anchor, img, res] = [];
 
   beforeEach(() => {
     waitsForPromise(() => {
-      return atom.packages.activatePackage('language-gfm');
+      return atom.workspace.open('sample.md');
     });
 
     waitsForPromise(() => {
-      return atom.workspace.open('sample.md');
+      return atom.packages.activatePackage('language-gfm');
     });
 
     return this.mdwrap = new mdwrap();
