@@ -2,6 +2,9 @@
 
 ## atom-markdown-wrapper
 
+### 5.0.1
+- Fix `editor.insertText is not a function` bug, https://github.com/stoe/atom-markdown-wrapper/issues/8
+
 ### 5.0.0.
 - Switch to `use babel` and ECMAScript 6
 
