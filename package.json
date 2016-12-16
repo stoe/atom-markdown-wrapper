@@ -1,6 +1,6 @@
 {
   "name": "atom-markdown-wrapper",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Wraps markdown links, images, bold and italic text.",
   "keywords": [
     "markdown",
