@@ -168,5 +168,26 @@ describe('Atom Markdown Wrapper', () => {
         expect(res).toBe('_selection_');
       });
     });
+
+    describe('.strikethrough()', () => {
+      it('should be defined', () => {
+        expect(this.mdwrap.strikethrough).toBeDefined();
+      });
+
+      it('should require 2 parameters', () => {
+        spyOn(this.mdwrap, 'strikethrough');
+
+        this.mdwrap.strikethrough(1, 2);
+        expect(this.mdwrap.strikethrough).toHaveBeenCalledWith(1, 2);
+      });
+
+      it('should insert ~~selection~~', () => {
+        spyOn(this.mdwrap, 'strikethrough').andCallThrough();
+
+        res = this.mdwrap.strikethrough(editor, sel);
+        expect(this.mdwrap.strikethrough).toHaveBeenCalledWith(editor, sel);
+        expect(res).toBe('~~selection~~');
+      });
+    });
   });
 });
