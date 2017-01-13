@@ -2,7 +2,7 @@
 
 # Atom.io Markdown Wrapper package
 
-Wraps markdown links, images, bold and italic text.
+Wraps markdown links, images, bold and italic text, and strikethrough.
 
 
 ### Installation
@@ -38,6 +38,13 @@ apm install atom-markdown-wrapper
 
 1. Select the text
 2. Click `ctrl+i` (`cmd+i` on Macs) and the selected text will be marked _italic_ (`_italic_`).
+2. Click `ctrl+b` (`cmd+b` on Macs) and the selected text will be marked **bold** (`**bold**`).
+
+
+#### Strikethrough
+
+1. Select the text
+2. Click `ctrl+s` (`ctrl+i` on Macs) and the selected text will be marked ~~strikethrough~~ (`~~strikethrough~~`).
 
 
 ### License
