@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/stoe/atom-markdown-wrapper.svg?branch=master)](https://travis-ci.org/stoe/atom-markdown-wrapper) [![Known Vulnerabilities](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c/badge.svg)](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c)
+[![build status](https://img.shields.io/travis/stoe/atom-markdown-wrapper.svg)](https://travis-ci.org/stoe/atom-markdown-wrapper) [![known vulnerabilities](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c/badge.svg)](https://snyk.io/test/github/stoe/atom-markdown-wrapper/baeed3d4bc71137dcb28bdf0cca4a9f781cf8d6c)
+[![apm version](https://img.shields.io/apm/v/atom-markdown-wrapper.svg)](https://atom.io/packages/atom-markdown-wrapper) [![apm downloads](https://img.shields.io/apm/dm/atom-markdown-wrapper.svg)](https://atom.io/packages/atom-markdown-wrapper) [![license](https://img.shields.io/github/license/stoe/atom-markdown-wrapper.svg)](https://github.com/stoe/atom-markdown-wrapper/blob/master/LICENSE)
 
 # Atom.io Markdown Wrapper package
 
