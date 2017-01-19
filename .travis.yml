@@ -14,6 +14,5 @@ cache:
   directories:
     - node_modules
 
-before_install: 'yarn'
-script: 'yarn test'
+script: 'npm test'
 after_script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
