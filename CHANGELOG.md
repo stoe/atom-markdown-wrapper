@@ -3,7 +3,7 @@
 ## atom-markdown-wrapper
 
 ### 5.1.1
-- Add yarn
+- Add [xo](https://github.com/sindresorhus/xo)
 - Update badges
 
 ### 5.1.0
