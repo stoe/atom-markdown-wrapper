@@ -1,7 +1,7 @@
 'use babel';
 
-const Atommdwrap = require('../lib/atom-markdown-wrapper');
-const mdwrap = require('../lib/mdwrap');
+const AtomMDWrap = require('../lib/atom-markdown-wrapper');
+const MDWrap = require('../lib/mdwrap');
 
 describe('Atom Markdown Wrapper', () => {
   let [editor, sel, txt, anchor, img, res] = [];
@@ -15,21 +15,22 @@ describe('Atom Markdown Wrapper', () => {
       return atom.packages.activatePackage('language-gfm');
     });
 
-    return this.mdwrap = new mdwrap();
+    this.MDWrap = new MDWrap();
+
+    return this.MDWrap;
   });
 
   afterEach(() => {
     atom.reset();
 
-    return this.mdwrap.destroy();
+    return this.MDWrap.destroy();
   });
 
   it('should load correctly', () => {
-    expect(Atommdwrap).toBeDefined();
+    expect(AtomMDWrap).toBeDefined();
   });
 
-  describe('mdwrap', () => {
-
+  describe('MDWrap', () => {
     beforeEach(() => {
       editor = atom.workspace.getActiveTextEditor();
       sel = 'selection';
@@ -47,145 +48,145 @@ describe('Atom Markdown Wrapper', () => {
     });
 
     it('should be defined', () => {
-      expect(this.mdwrap).toBeDefined();
+      expect(this.MDWrap).toBeDefined();
     });
 
     describe('.paste()', () => {
-
       it('should be defined', () => {
-        expect(this.mdwrap.paste).toBeDefined();
+        expect(this.MDWrap.paste).toBeDefined();
       });
 
       it('should require three parameters', () => {
-        spyOn(this.mdwrap, 'paste');
+        spyOn(this.MDWrap, 'paste');
 
-        this.mdwrap.paste(1, 2, 3);
-        expect(this.mdwrap.paste).toHaveBeenCalledWith(1, 2, 3);
+        this.MDWrap.paste(1, 2, 3);
+        expect(this.MDWrap.paste).toHaveBeenCalledWith(1, 2, 3);
       });
 
       it('should only paste valid links', () => {
-        expect(() => new mdwrap().paste(editor, sel, 'foobar')).toThrow('Not a valid URL or #anchor');
+        let res = () => new MDWrap().paste(editor, sel, 'foobar');
+
+        expect(res).toThrow('Not a valid URL or #anchor');
       });
 
       it('should replace `selection` with [selection](https://example.com) for web links', () => {
-        spyOn(this.mdwrap, 'paste').andCallThrough();
+        spyOn(this.MDWrap, 'paste').andCallThrough();
 
-        res = this.mdwrap.paste(editor, sel, txt);
-        expect(this.mdwrap.paste).toHaveBeenCalledWith(editor, sel, txt);
+        res = this.MDWrap.paste(editor, sel, txt);
+        expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, txt);
         expect(res).toBe('[selection](https://example.com)');
       });
 
       it('should replace `selection` with [selection](#example) for anchor links', () => {
-        spyOn(this.mdwrap, 'paste').andCallThrough()
+        spyOn(this.MDWrap, 'paste').andCallThrough();
 
-        res = this.mdwrap.paste(editor, sel, anchor)
-        expect(this.mdwrap.paste).toHaveBeenCalledWith(editor, sel, anchor)
+        res = this.MDWrap.paste(editor, sel, anchor);
+        expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, anchor);
         expect(res).toBe('[selection](#example)');
       });
-
     });
 
     describe('.image()', () => {
-
       it('should be defined', () => {
-        expect(this.mdwrap.image).toBeDefined();
+        expect(this.MDWrap.image).toBeDefined();
       });
 
       it('should require two parameters', () => {
-        spyOn(this.mdwrap, 'image');
+        spyOn(this.MDWrap, 'image');
 
-        this.mdwrap.image(1, 2);
-        expect(this.mdwrap.image).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.image(1, 2);
+        expect(this.MDWrap.image).toHaveBeenCalledWith(1, 2);
       });
 
       it('should accept three parameters', () => {
-        spyOn(this.mdwrap, 'image');
+        spyOn(this.MDWrap, 'image');
 
-        this.mdwrap.image(1, 2, 3);
-        expect(this.mdwrap.image).toHaveBeenCalledWith(1, 2, 3);
+        this.MDWrap.image(1, 2, 3);
+        expect(this.MDWrap.image).toHaveBeenCalledWith(1, 2, 3);
       });
 
       it('should only paste valid URLs', () => {
-        expect(() => new mdwrap().image(editor, sel, 'image')).toThrow('Not a valid image URL');
+        let res = () => new MDWrap().image(editor, sel, 'image');
+
+        expect(res).toThrow('Not a valid image URL');
       });
 
       it('should insert ![](https://example.com/image.png)', () => {
-        spyOn(this.mdwrap, 'image').andCallThrough();
+        spyOn(this.MDWrap, 'image').andCallThrough();
 
-        res = this.mdwrap.image(editor, undefined, img);
-        expect(this.mdwrap.image).toHaveBeenCalledWith(editor, undefined, img);
+        res = this.MDWrap.image(editor, undefined, img);
+        expect(this.MDWrap.image).toHaveBeenCalledWith(editor, undefined, img);
         expect(res).toBe('![](https://example.com/image.png)');
       });
 
       it('should replace `selection` with ![selection](https://example.com/image.png)', () => {
-        spyOn(this.mdwrap, 'image').andCallThrough();
+        spyOn(this.MDWrap, 'image').andCallThrough();
 
-        res = this.mdwrap.image(editor, sel, img);
-        expect(this.mdwrap.image).toHaveBeenCalledWith(editor, sel, img);
+        res = this.MDWrap.image(editor, sel, img);
+        expect(this.MDWrap.image).toHaveBeenCalledWith(editor, sel, img);
         expect(res).toBe('![selection](https://example.com/image.png)');
       });
-
     });
 
     describe('.bold()', () => {
       it('should be defined', () => {
-        expect(this.mdwrap.bold).toBeDefined();
+        expect(this.MDWrap.bold).toBeDefined();
       });
 
       it('should require 2 parameters', () => {
-        spyOn(this.mdwrap, 'bold');
+        spyOn(this.MDWrap, 'bold');
 
-        this.mdwrap.bold(1, 2);
-        expect(this.mdwrap.bold).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.bold(1, 2);
+        expect(this.MDWrap.bold).toHaveBeenCalledWith(1, 2);
       });
 
       it('should insert **selection**', () => {
-        spyOn(this.mdwrap, 'bold').andCallThrough();
+        spyOn(this.MDWrap, 'bold').andCallThrough();
 
-        res = this.mdwrap.bold(editor, sel);
-        expect(this.mdwrap.bold).toHaveBeenCalledWith(editor, sel);
+        res = this.MDWrap.bold(editor, sel);
+        expect(this.MDWrap.bold).toHaveBeenCalledWith(editor, sel);
         expect(res).toBe('**selection**');
       });
     });
 
     describe('.italic()', () => {
       it('should be defined', () => {
-        expect(this.mdwrap.italic).toBeDefined();
+        expect(this.MDWrap.italic).toBeDefined();
       });
 
       it('should require 2 parameters', () => {
-        spyOn(this.mdwrap, 'italic');
+        spyOn(this.MDWrap, 'italic');
 
-        this.mdwrap.italic(1, 2);
-        expect(this.mdwrap.italic).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.italic(1, 2);
+        expect(this.MDWrap.italic).toHaveBeenCalledWith(1, 2);
       });
 
       it('should insert _selection_', () => {
-        spyOn(this.mdwrap, 'italic').andCallThrough();
+        spyOn(this.MDWrap, 'italic').andCallThrough();
 
-        res = this.mdwrap.italic(editor, sel);
-        expect(this.mdwrap.italic).toHaveBeenCalledWith(editor, sel);
+        res = this.MDWrap.italic(editor, sel);
+        expect(this.MDWrap.italic).toHaveBeenCalledWith(editor, sel);
         expect(res).toBe('_selection_');
       });
     });
 
     describe('.strikethrough()', () => {
       it('should be defined', () => {
-        expect(this.mdwrap.strikethrough).toBeDefined();
+        expect(this.MDWrap.strikethrough).toBeDefined();
       });
 
       it('should require 2 parameters', () => {
-        spyOn(this.mdwrap, 'strikethrough');
+        spyOn(this.MDWrap, 'strikethrough');
 
-        this.mdwrap.strikethrough(1, 2);
-        expect(this.mdwrap.strikethrough).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.strikethrough(1, 2);
+        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(1, 2);
       });
 
       it('should insert ~~selection~~', () => {
-        spyOn(this.mdwrap, 'strikethrough').andCallThrough();
+        spyOn(this.MDWrap, 'strikethrough').andCallThrough();
 
-        res = this.mdwrap.strikethrough(editor, sel);
-        expect(this.mdwrap.strikethrough).toHaveBeenCalledWith(editor, sel);
+        res = this.MDWrap.strikethrough(editor, sel);
+        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(editor, sel);
         expect(res).toBe('~~selection~~');
       });
     });
