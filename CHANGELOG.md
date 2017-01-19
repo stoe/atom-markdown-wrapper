@@ -2,6 +2,10 @@
 
 ## atom-markdown-wrapper
 
+### 5.1.1
+- Add yarn
+- Update badges
+
 ### 5.1.0
 - Add strikethrough functionality, `~~strikethrough~~`
 
