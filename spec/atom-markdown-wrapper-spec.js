@@ -1,10 +1,9 @@
 'use babel';
-
 const AtomMDWrap = require('../lib/atom-markdown-wrapper');
 const MDWrap = require('../lib/mdwrap');
 
 describe('Atom Markdown Wrapper', () => {
-  let [editor, sel, txt, anchor, img, res] = [];
+  let [ editor, sel, txt, anchor, img, res ] = [];
 
   beforeEach(() => {
     waitsForPromise(() => {
@@ -69,21 +68,27 @@ describe('Atom Markdown Wrapper', () => {
         expect(res).toThrow('Not a valid URL or #anchor');
       });
 
-      it('should replace `selection` with [selection](https://example.com) for web links', () => {
-        spyOn(this.MDWrap, 'paste').andCallThrough();
+      it(
+        'should replace `selection` with [selection](https://example.com) for web links',
+        () => {
+          spyOn(this.MDWrap, 'paste').andCallThrough();
 
-        res = this.MDWrap.paste(editor, sel, txt);
-        expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, txt);
-        expect(res).toBe('[selection](https://example.com)');
-      });
+          res = this.MDWrap.paste(editor, sel, txt);
+          expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, txt);
+          expect(res).toBe('[selection](https://example.com)');
+        }
+      );
 
-      it('should replace `selection` with [selection](#example) for anchor links', () => {
-        spyOn(this.MDWrap, 'paste').andCallThrough();
+      it(
+        'should replace `selection` with [selection](#example) for anchor links',
+        () => {
+          spyOn(this.MDWrap, 'paste').andCallThrough();
 
-        res = this.MDWrap.paste(editor, sel, anchor);
-        expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, anchor);
-        expect(res).toBe('[selection](#example)');
-      });
+          res = this.MDWrap.paste(editor, sel, anchor);
+          expect(this.MDWrap.paste).toHaveBeenCalledWith(editor, sel, anchor);
+          expect(res).toBe('[selection](#example)');
+        }
+      );
     });
 
     describe('.image()', () => {
@@ -119,13 +124,16 @@ describe('Atom Markdown Wrapper', () => {
         expect(res).toBe('![](https://example.com/image.png)');
       });
 
-      it('should replace `selection` with ![selection](https://example.com/image.png)', () => {
-        spyOn(this.MDWrap, 'image').andCallThrough();
+      it(
+        'should replace `selection` with ![selection](https://example.com/image.png)',
+        () => {
+          spyOn(this.MDWrap, 'image').andCallThrough();
 
-        res = this.MDWrap.image(editor, sel, img);
-        expect(this.MDWrap.image).toHaveBeenCalledWith(editor, sel, img);
-        expect(res).toBe('![selection](https://example.com/image.png)');
-      });
+          res = this.MDWrap.image(editor, sel, img);
+          expect(this.MDWrap.image).toHaveBeenCalledWith(editor, sel, img);
+          expect(res).toBe('![selection](https://example.com/image.png)');
+        }
+      );
     });
 
     describe('.bold()', () => {
