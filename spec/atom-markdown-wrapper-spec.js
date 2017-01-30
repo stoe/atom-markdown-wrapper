@@ -3,7 +3,7 @@ const AtomMDWrap = require('../lib/atom-markdown-wrapper');
 const MDWrap = require('../lib/mdwrap');
 
 describe('Atom Markdown Wrapper', () => {
-  let [ editor, sel, txt, anchor, img, res ] = [];
+  let [editor, sel, txt, anchor, img, res] = [];
 
   beforeEach(() => {
     waitsForPromise(() => {
