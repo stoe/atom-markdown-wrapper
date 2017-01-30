@@ -141,19 +141,21 @@ describe('Atom Markdown Wrapper', () => {
         expect(this.MDWrap.bold).toBeDefined();
       });
 
-      it('should require 2 parameters', () => {
+      it('should require 1 parameter', () => {
         spyOn(this.MDWrap, 'bold');
 
-        this.MDWrap.bold(1, 2);
-        expect(this.MDWrap.bold).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.bold(1);
+        expect(this.MDWrap.bold).toHaveBeenCalledWith(1);
       });
 
       it('should insert **selection**', () => {
         spyOn(this.MDWrap, 'bold').andCallThrough();
 
-        res = this.MDWrap.bold(editor, sel);
-        expect(this.MDWrap.bold).toHaveBeenCalledWith(editor, sel);
-        expect(res).toBe('**selection**');
+        res = this.MDWrap.bold(editor);
+        expect(this.MDWrap.bold).toHaveBeenCalledWith(editor);
+        expect(typeof res).toBe('object');
+        expect(res.length).toBe(1);
+        expect(res[0]).toBe(false);
       });
     });
 
@@ -162,19 +164,21 @@ describe('Atom Markdown Wrapper', () => {
         expect(this.MDWrap.italic).toBeDefined();
       });
 
-      it('should require 2 parameters', () => {
+      it('should require 1 parameter', () => {
         spyOn(this.MDWrap, 'italic');
 
-        this.MDWrap.italic(1, 2);
-        expect(this.MDWrap.italic).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.italic(1);
+        expect(this.MDWrap.italic).toHaveBeenCalledWith(1);
       });
 
       it('should insert _selection_', () => {
         spyOn(this.MDWrap, 'italic').andCallThrough();
 
-        res = this.MDWrap.italic(editor, sel);
-        expect(this.MDWrap.italic).toHaveBeenCalledWith(editor, sel);
-        expect(res).toBe('_selection_');
+        res = this.MDWrap.italic(editor);
+        expect(this.MDWrap.italic).toHaveBeenCalledWith(editor);
+        expect(typeof res).toBe('object');
+        expect(res.length).toBe(1);
+        expect(res[0]).toBe(false);
       });
     });
 
@@ -183,19 +187,21 @@ describe('Atom Markdown Wrapper', () => {
         expect(this.MDWrap.strikethrough).toBeDefined();
       });
 
-      it('should require 2 parameters', () => {
+      it('should require 1 parameter', () => {
         spyOn(this.MDWrap, 'strikethrough');
 
-        this.MDWrap.strikethrough(1, 2);
-        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(1, 2);
+        this.MDWrap.strikethrough(1);
+        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(1);
       });
 
       it('should insert ~~selection~~', () => {
         spyOn(this.MDWrap, 'strikethrough').andCallThrough();
 
-        res = this.MDWrap.strikethrough(editor, sel);
-        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(editor, sel);
-        expect(res).toBe('~~selection~~');
+        res = this.MDWrap.strikethrough(editor);
+        expect(this.MDWrap.strikethrough).toHaveBeenCalledWith(editor);
+        expect(typeof res).toBe('object');
+        expect(res.length).toBe(1);
+        expect(res[0]).toBe(false);
       });
     });
   });
