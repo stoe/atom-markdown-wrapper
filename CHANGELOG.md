@@ -2,6 +2,12 @@
 
 ## atom-markdown-wrapper
 
+### 5.2.1
+- Fix paste link/image, https://github.com/stoe/atom-markdown-wrapper/pull/13
+
+### 5.2.0
+- add multiselect to **bold**, _italic_, and ~~strikethrough~~
+
 ### 5.1.1
 - Add [xo](https://github.com/sindresorhus/xo)
 - Update badges
