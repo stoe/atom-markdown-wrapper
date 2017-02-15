@@ -6,7 +6,7 @@
     "cmd-i": "atom-markdown-wrapper:italic",
     "ctrl-s": "atom-markdown-wrapper:strikethrough"
   },
-".platform-win32 atom-text-editor.is-focused[data-grammar='source gfm'], .platform-linux atom-text-editor.is-focused[data-grammar='source gfm']": {
+  ".platform-win32 atom-text-editor.is-focused[data-grammar='source gfm'], .platform-linux atom-text-editor.is-focused[data-grammar='source gfm']": {
     "ctrl-shift-v": "atom-markdown-wrapper:paste",
     "ctrl-shift-i": "atom-markdown-wrapper:image",
     "ctrl-b": "atom-markdown-wrapper:bold",
