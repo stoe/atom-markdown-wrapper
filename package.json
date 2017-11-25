@@ -19,7 +19,10 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/stoe/atom-markdown-wrapper#readme",
-  "repository": "stoe/atom-markdown-wrapper",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stoe/atom-markdown-wrapper.git"
+  },
   "bugs": {
     "url": "https://github.com/stoe/atom-markdown-wrapper/issues"
   },
