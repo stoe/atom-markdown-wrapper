@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/stoe/atom-markdown-wrapper#readme",
-  "repository": "stoe/pdfify-node",
+  "repository": "stoe/atom-markdown-wrapper",
   "bugs": {
     "url": "https://github.com/stoe/atom-markdown-wrapper/issues"
   },
