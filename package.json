@@ -15,27 +15,22 @@
   "author": {
     "name": "Stefan Stölzle",
     "email": "stefan@github.com",
-    "url": "https://github.com/stoe/"
+    "url": "stefan.stoelzle.me"
   },
-  "contributors": [],
   "license": "MIT",
-  "main": "./lib/atom-markdown-wrapper",
-  "activationCommands": {
-    "atom-workspace": "atom-markdown-wrapper:italic"
-  },
-  "homepage": "http://stefan.stoelzle.me",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stoe/atom-markdown-wrapper.git"
-  },
+  "homepage": "https://github.com/stoe/atom-markdown-wrapper#readme",
+  "repository": "stoe/pdfify-node",
   "bugs": {
     "url": "https://github.com/stoe/atom-markdown-wrapper/issues"
   },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
+  "main": "./lib/atom-markdown-wrapper",
   "scripts": {
-    "test": "snyk test && xo"
+    "test": "snyk test && xo",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "valid-url": "^1.0.9"
@@ -45,6 +40,11 @@
     "eslint-plugin-jasmine": "^2.2.0",
     "snyk": "^1.21.2",
     "xo": "^0.17.1"
+  },
+  "ava": {
+    "files": [
+      "test/*.t.js"
+    ]
   },
   "xo": {
     "space": true,
@@ -60,5 +60,6 @@
       "node",
       "jasmine"
     ]
-  }
+  },
+  "snyk": true
 }
