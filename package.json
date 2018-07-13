@@ -39,10 +39,13 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint-plugin-jasmine": "^2.2.0",
-    "snyk": "^1.21.2",
-    "xo": "^0.17.1"
+    "babel-eslint": "^8.2.6",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "snyk": "^1.88.2",
+    "xo": "^0.21.1"
+  },
+  "resolutions": {
+    "eslint-scope": "3.7.1"
   },
   "ava": {
     "files": [
